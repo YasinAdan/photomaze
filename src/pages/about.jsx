@@ -6,13 +6,13 @@ import FaqSection from './../components/FaqSection';
 
 
 const AboutPage =  () => {
-return (
+    return (
     <>
         <AboutUS />
         <Services />
         <FaqSection />
     </>
-)
+    )
 }
 
 export default AboutPage
