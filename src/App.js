@@ -1,17 +1,28 @@
 // global style
-import GlobalStyle from './components/GlobalStyle';
+import GlobalStyle from "./components/GlobalStyle";
 
-import Nav from './components/NavSection';
+import { Routes, Route } from "react-router-dom";
+
+import Nav from "./components/NavSection";
 
 // pages
-import About from './pages/about'
+import About from "./pages/about";
+import Contact from "./pages/contact";
+import OurWork from "./pages/ourwork";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
       <Nav />
-      <About />
+      <Routes>
+        <Route path="/">
+          <Route index element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="ourwork" element={<OurWork />} />
+        </Route>
+        <Route path="*" element={<About />} />
+      </Routes>
     </div>
   );
 }
