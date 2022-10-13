@@ -7,30 +7,19 @@ import athlete from "../img/athlete-small.png";
 import theracer from "../img/theracer-small.png";
 import goodtimes from "../img/goodtimes-small.png";
 
-function OurWork() {
+function OurWork({movies}) {
   return (
     <Work>
-      <Movie>
-        <h2>The Athlete</h2>
-        <div className="line"> </div>
-        <Link to="/ourwork">
-          <img src={athlete} alt="image of an athlete" />
-        </Link>
-      </Movie>
-      <Movie>
-        <h2>The Racer</h2>
-        <div className="line"> </div>
-        <Link to="/ourwork">
-          <img src={theracer} alt="image of a racer" />
-        </Link>
-      </Movie>
-      <Movie>
-        <h2>Good Times</h2>
-        <div className="line"> </div>
-        <Link to="/ourwork">
-          <img src={goodtimes} alt="goodtimes" />
-        </Link>
-      </Movie>
+
+    {movies.map(mv => (
+            <Movie key={mv.url}>
+            <h2>{mv.title}</h2>
+            <div className="line"></div>
+            <Link to={mv.url}>
+              <img src={mv.mainImg} alt="image of an athlete" />
+            </Link>
+          </Movie>
+    ))}
     </Work>
   );
 }
