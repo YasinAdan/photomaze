@@ -15,6 +15,7 @@ import Contact from "./pages/contact";
 import OurWork from "./pages/ourwork";
 import MovieDetail from "./MovieDetail";
 import { MovieState } from "./movieState";
+import { motion } from "framer-motion";
 
 function App() {
   const [movies, setMovies] = useState(MovieState());

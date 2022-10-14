@@ -52,6 +52,16 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.4rem;
         line-height: 150%;
     }
+    
+    Progress {
+    width: 100%;
+    height: 10px;
+    position: fixed;
+    left: 0;
+    top: 95%;
+    right:0;
+    background-color: #ff0055;
+     }
 `;
 
 export default GlobalStyle;

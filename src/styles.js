@@ -30,3 +30,13 @@ export const Image = styled.div`
 export const Hide = styled.div`
     overflow: hidden;
 `;
+
+export const Progress = styled.div`
+    width: 100%;
+    height: 10px;
+    position: fixed;
+    left: 0;
+    top: 95%;
+    right:0;
+    background-color: #ff0055;
+`;

@@ -6,7 +6,7 @@ const Nav = () => {
   return (
     <StyledNav>
       <h1>
-        <Link to='/' id='logo'>Capture</Link>
+        <Link to='/' id='logo'>Photomaze</Link>
       </h1>
       <ul>
         <li>
