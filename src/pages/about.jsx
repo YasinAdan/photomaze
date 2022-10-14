@@ -3,19 +3,21 @@ import React from 'react';
 import AboutUS from '../components/AboutSection'
 import Services from '../components/ServicesSection'
 import FaqSection from './../components/FaqSection';
-import { motion, useScroll } from 'framer-motion';
 import { Progress } from '../styles';
+import { pageAnimation } from '../animation';
+import { motion, useScroll } from 'framer-motion';
+
 
 
 const AboutPage =  () => {
     const { scrollYProgress } = useScroll();
     return (
-        <>
+        <motion.div variants={pageAnimation} initial='hidden' animate='show' exit='exit'>
         <AboutUS />
         <Services />
         <FaqSection />
-        <Progress as={motion.div} style={{scaleX: scrollYProgress}} />  
-    </>
+        <Progress as={motion.div} style={{scaleX: scrollYProgress}}/>  
+    </motion.div>
     )
 }
 

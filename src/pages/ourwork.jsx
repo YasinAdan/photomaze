@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { pageAnimation } from '../animation';
+import { motion } from 'framer-motion';
 
 // image imports
 import athlete from "../img/athlete-small.png";
@@ -9,8 +11,7 @@ import goodtimes from "../img/goodtimes-small.png";
 
 function OurWork({movies}) {
   return (
-    <Work>
-
+    <Work as={motion.div} variants={pageAnimation} initial='hidden' animate='show' exit='exit' style={{background: "#fff"}}>
     {movies.map(mv => (
             <Movie key={mv.url}>
             <h2>{mv.title}</h2>

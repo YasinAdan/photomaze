@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
+import { pageAnimation } from './animation';
+import { motion, useScroll } from 'framer-motion';
 
 function MovieDetail({ movies, movie, setMovie }) {
   const location = useLocation();
@@ -13,7 +15,7 @@ function MovieDetail({ movies, movie, setMovie }) {
   return (
     <>
       {movie && (
-        <Details>
+        <Details as={motion.div} variants={pageAnimation} initial='hidden' animate='show' exit='exit'>
           <Headline>
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt="movie" />
