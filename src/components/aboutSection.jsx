@@ -6,6 +6,7 @@ import { About, Description, Image, Hide } from "../styles";
 import { titleAnimation, fade, photoAnimation } from "../animation";
 
 import home1 from "../img/home1.png";
+import { Wave } from "./Wave";
 
 const AboutSection = () => {
   return (
@@ -33,6 +34,7 @@ const AboutSection = () => {
       <Image>
         <motion.img src={home1} alt="Guy with a camera" variants={photoAnimation}/>
       </Image>
+      <Wave />
     </About>
   );
 };
