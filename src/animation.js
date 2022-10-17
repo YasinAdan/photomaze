@@ -8,12 +8,54 @@ export const pageAnimation = {
         y: 0,
         transition: {
             duration: 1,
+            when: 'beforeChildren',
+            staggerChildren: 0.25,
         }
     },
     exit: {
         opacity: 0,
         transition: {
             duration: 0.3,
+            ease: 'easeOut',
+        }
+    }
+}
+
+export const titleAnimation = {
+    hidden: {
+        y: 200,
+    },
+    show: {
+        y: 0,
+        transition: {
+            duration: 0.75,
+            staggerChildren: 0.5,
+            ease: 'easeOut'
+        }
+    }
+}
+
+export const fade = {
+    hidden: {
+        opacity: 0,
+    },
+    show: {
+        opacity: 1,
+        duration: 1,
+        ease: 'easeOut'
+    }
+}
+
+export const photoAnimation = {
+    hidden: {
+        opacity: 0,
+        scale: 1.5,
+    },
+    show: {
+        opacity:  1,
+        scale: 1,
+        transition: {
+            duration: 0.75,
             ease: 'easeOut'
         }
     }
