@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { motion } from "framer-motion";
 
 const GlobalStyle = createGlobalStyle`
     * {

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import {About, Description, Image} from '../styles'
+import {fade} from '../animation';
+import useScroll from './useScroll';
 
 // import icons
 import clock from '../img/clock.svg';
@@ -9,10 +11,13 @@ import money from '../img/money.svg';
 import teamwork from '../img/teamwork.svg';
 import home2 from '../img/home2.png';
 
-const serviceSection = () => {
+const ServiceSection = () => {
+
+    const [ref, controls] = useScroll();
+
     return (
     
-            <Services>
+            <Services variants={fade} animate={controls} initial="hidden" ref={ref}>
                 <Description>
                     <h2>
                         High <span>quality</span> services
@@ -95,4 +100,4 @@ const Card = styled.div`
     }
 `;
 
-export default serviceSection;
+export default ServiceSection;

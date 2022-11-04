@@ -1,57 +1,71 @@
-import React from 'react';
-import styled from 'styled-components'
-import {About} from '../styles'
+import React, { useState } from "react";
+import styled from "styled-components";
+import { LayoutGroup } from "framer-motion";
+import Toggle from "./Toggle";
+import useScroll from "./useScroll";
+import { scrollReveal } from "../animation";
+import { motion } from "framer-motion";
 
+import { About } from "../styles";
 
 const FaqSection = () => {
+  const [ref, controls] = useScroll();
   return (
-    <Faq>
-      <h2>Any Questions <span>FAQ</span></h2>
-      <div className="question">
-        <h4>How do I start</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit</p>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, aspernatur.</p>
-        </div>
-        <div className="faq-line"></div>
+    <Faq ref={ref} animate={controls}>
+      <motion.div variants={scrollReveal}>
+        <h2>
+          Any Questions <span>FAQ</span>
+        </h2>
+        <LayoutGroup>
+          <Toggle title="How do I start">
+            <div className="answer">
+              <p>Lorem ipsum dolor sit</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Accusantium, aspernatur.
+              </p>
+            </div>
+          </Toggle>
+          <Toggle title="Daily schedule">
+            <div className="answer">
+              <p>Lorem ipsum dolor sit</p>
 
-      </div>
-      <div className="question">
-        <h4>Daily schedule</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit</p>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, aspernatur.</p>
-        </div>
-        <div className="faq-line"></div>
-      </div>
-      <div className="question">
-        <h4>Payment methods</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit</p>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, aspernatur.</p>
-        </div>
-        <div className="faq-line"></div>
-
-      </div>
-      <div className="question">
-        <h4>Videography pricing</h4>
-        <div className="answer">
-          <p>Lorem ipsum dolor sit</p>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium, aspernatur.</p>
-        </div>
-        <div className="faq-line"></div>
-
-      </div>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Accusantium, aspernatur.
+              </p>
+            </div>
+          </Toggle>
+          <Toggle title="Payment methods">
+            <div className="answer">
+              <p>Lorem ipsum dolor sit</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Accusantium, aspernatur.
+              </p>
+            </div>
+          </Toggle>
+          <Toggle title="Videography pricing">
+            <div className="answer">
+              <p>Lorem ipsum dolor sit</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Accusantium, aspernatur.
+              </p>
+            </div>
+          </Toggle>
+        </LayoutGroup>
+      </motion.div>
     </Faq>
-  )
-}
+  );
+};
 
 const Faq = styled(About)`
   display: block;
-  span{
+  span {
     display: block;
   }
-  h2{
+  h2 {
     padding-bottom: 2rem;
     font-weight: lighter;
   }
@@ -73,5 +87,7 @@ const Faq = styled(About)`
     }
   }
 `;
+
+// const FagC = styled(motion.div)``;
 
 export default FaqSection;

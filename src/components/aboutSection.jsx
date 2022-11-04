@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { About, Description, Image, Hide } from "../styles";
 import { titleAnimation, fade, photoAnimation } from "../animation";
+
 
 import home1 from "../img/home1.png";
 import { Wave } from "./Wave";
@@ -32,7 +33,7 @@ const AboutSection = () => {
         <motion.button variants={fade}>Contact Us</motion.button>
       </Description>
       <Image>
-        <motion.img src={home1} alt="Guy with a camera" variants={photoAnimation}/>
+        <motion.img src={home1} alt="Guy with a camera" variants={photoAnimation} initial="hidden" animate="show"/>
       </Image>
       <Wave />
     </About>
