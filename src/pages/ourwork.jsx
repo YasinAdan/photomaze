@@ -3,12 +3,13 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { pageAnimation, fade, photoAnimation, lineAnim, slider, sliderContainer } from "../animation";
 import { motion } from "framer-motion";
-import useScroll from "../components/useScroll";
+import {scrollReveal} from '../animation';
 
 // image imports
 import athlete from "../img/athlete-small.png";
 import theracer from "../img/theracer-small.png";
 import goodtimes from "../img/goodtimes-small.png";
+import ScrollTop from "../components/ScrollTop";
 
 function OurWork({ movies }) {
   return (
@@ -27,7 +28,7 @@ function OurWork({ movies }) {
       <Frame4 variants={slider}></Frame4>
       </motion.div>
         
-      {movies.map((mv) => (
+      {movies.map((mv, i) => (
         <Movie key={mv.url}>
           <motion.h2 variants={fade}>{mv.title}</motion.h2>
           <motion.div className="line" variants={lineAnim}></motion.div>
@@ -42,6 +43,7 @@ function OurWork({ movies }) {
           </Link>
         </Movie>
       ))}
+      <ScrollTop />
     </Work>
   );
 }
@@ -53,8 +55,12 @@ const Work = styled.div`
   h2 {
     padding: 1rem 0rem;
   }
+
+  @media (max-width: 1300px) {
+    padding: 2rem 2rem;
+  }
 `;
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
   .line {
     height: 0.5rem;

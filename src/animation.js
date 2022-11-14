@@ -28,8 +28,8 @@ export const titleAnimation = {
   show: {
     y: 0,
     transition: {
-      duration: 0.75,
-      staggerChildren: 0.5,
+      duration: 0.85,
+      staggerChildren: 0.25,
       ease: "easeOut",
     },
   },

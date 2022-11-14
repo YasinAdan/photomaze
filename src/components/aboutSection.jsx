@@ -27,8 +27,8 @@ const AboutSection = () => {
           </Hide>
         </motion.div>
         <motion.p variants={fade}>
-          Contact us for any photography or videography ideas you have, we have
-          proffesionals with amazing skills.
+          Contact us for any photography or videography ideas that you have. We
+          have professionals with amazing skills to help you achieve it.
         </motion.p>
         <motion.button variants={fade}>Contact Us</motion.button>
       </Description>

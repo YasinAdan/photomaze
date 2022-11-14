@@ -8,6 +8,12 @@ export const About = styled(motion.div)`
     justify-content: space-between;
     padding: 5rem 10rem;
     color: white;
+
+    @media (max-width: 1300px) {
+        display: block;
+        text-align: center;
+        padding: 2rem 2rem;
+}
 `;
 
 export const Description = styled.div`
@@ -17,6 +23,13 @@ export const Description = styled.div`
         font-weight: lighter;
     }
     z-index: 2;
+
+    @media (max-width: 1300px) {
+        padding: 0;
+        button {
+            margin: 2rem 0rem 5rem 0rem;
+        }
+}
 `;
 
 export const Image = styled.div`
@@ -36,10 +49,11 @@ export const Hide = styled.div`
 
 export const Progress = styled.div`
     width: 100%;
-    height: 10px;
+    height: 0.2rem;
     position: fixed;
     left: 0;
     top: 95%;
     right:0;
     background-color: #ff0055;
+    z-index: 100;
 `;
